@@ -1,6 +1,7 @@
 #ifndef SKIP_LIST_H_
 #define SKIP_LIST_H_
 
+#include <climits>
 #include <vector>
 #include <random>
 
@@ -8,15 +9,15 @@ class SkipList {
     struct Node {
         int key_;
         std::vector<Node*> next_;
-        explicit Node(int k, int level);
-        Node();
+        explicit Node(int k, int level) : key_(k), next_(level, nullptr) {}  // 内联实现
+        explicit Node() : Node(INT_MIN, MAX_LEVEL) {}  // 内联实现
     };
 
     static constexpr int MAX_LEVEL = 16;
     static constexpr double P = 0.5;
 
     Node* head_;
-    int current_level_;
+    int currentLevel_;  // 改成和 .cpp 一致
 
     std::mt19937 rng_;
     std::uniform_real_distribution<double> dist_;
