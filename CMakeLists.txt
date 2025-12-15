@@ -9,5 +9,10 @@ add_executable(ds
         src/SkipList.cpp
         benchmark/SkipList_test.cpp
 )
-
+add_compile_options(
+        "$<$<CONFIG:RELEASE>:-O3>"
+        "$<$<CONFIG:RELWITHDEBINFO>:-O2 -g>"
+        "$<$<CONFIG:MINSIZEREL>:-O1>"
+        "$<$<CONFIG:DEBUG>:-O0 -g3>"
+)
 target_include_directories(ds PUBLIC ${CMAKE_SOURCE_DIR}/include)

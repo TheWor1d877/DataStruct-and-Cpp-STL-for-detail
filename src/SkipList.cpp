@@ -51,7 +51,6 @@ void SkipList::insert(int key){
     if(cur->next_[0] && cur->next_[0]->key_ == key) return;
 
     const int nodeLevel = randomLevel();
-    std::cout<<"new node layer:"<<nodeLevel<<std::endl;
 
     if(nodeLevel > currentLevel_){
         for(int i=currentLevel_;i<nodeLevel;i++){

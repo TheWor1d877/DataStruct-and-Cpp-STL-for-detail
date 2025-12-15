@@ -14,7 +14,7 @@ class SkipList {
     };
 
     static constexpr int MAX_LEVEL = 16;
-    static constexpr double P = 0.5;
+    static constexpr double P = 0.25;
 
     Node* head_;
     int currentLevel_;  // 改成和 .cpp 一致

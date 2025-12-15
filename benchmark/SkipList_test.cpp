@@ -89,13 +89,4 @@ void printMarkdown(const std::vector<TestResult>& results) {
     }
 }
 
-// CSV 导出
-void exportCSV(const std::vector<TestResult>& results, const std::string& path) {
-    std::ofstream csv(path);
-    csv << "操作,数据量,SkipList,set\n";
-    for (const auto& r : results) {
-        csv << "插入," << r.n << "," << r.skipInsert << "," << r.setInsert << "\n";
-        csv << "查找," << r.n << "," << r.skipFind << "," << r.setFind << "\n";
-        csv << "删除," << r.n << "," << r.skipErase << "," << r.setErase << "\n";
-    }
-}
+

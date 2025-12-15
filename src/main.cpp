@@ -16,12 +16,7 @@ int main() {
         results.push_back(r);
     }
 
-    // 1. 控制台输出（直接复制到 Markdown）
     printMarkdown(results);
-
-    // 2. 导出 CSV
-    exportCSV(results, "benchmark.csv");
-    std::cout << "\n已导出 benchmark.csv，用 Excel 生成柱状图\n";
 
     return 0;
 }

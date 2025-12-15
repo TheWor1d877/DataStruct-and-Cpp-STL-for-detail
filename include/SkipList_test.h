@@ -15,6 +15,5 @@ struct TestResult {
 };
 void runBenchmark(TestResult& r);
 void printMarkdown(const std::vector<TestResult>& results);
-void exportCSV(const std::vector<TestResult>& results, const std::string& path);
 
 #endif //DATA_STRUCT_TEST_H
